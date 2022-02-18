@@ -1,5 +1,8 @@
 package com.mycompany.any;
 
 public class Fixture {
-    Channel[] channels;
+    public String name;
+
+    protected Channel[] channels;
+
 }
