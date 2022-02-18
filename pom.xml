@@ -25,6 +25,11 @@
       <version>4.11</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>ch.bildspur</groupId>
+      <artifactId>artnet4j</artifactId>
+      <version>0.6.2</version>
+    </dependency>
   </dependencies>
 
   <build>
