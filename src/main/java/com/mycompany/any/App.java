@@ -12,13 +12,42 @@ public class App {
         ArtNetClient artnet = new ArtNetClient();
         artnet.start();
 
-        // set data
-        for (int i = 0; i < dmxData.length; i++) {
-            dmxData[i] = (byte) 255;
-        }
+        while (true) {
+            for (int j = 0; j < 100; j++) {
+                for (int i = 0; i < dmxData.length; i++) {
+                    dmxData[i] = (byte) j;
+                }
 
-        // send data to localhost
-        artnet.unicastDmx("172.16.0.1", 0, 0, dmxData);
+                dmxData[9] = (byte) 0;
+
+                // send data to localhost
+                artnet.unicastDmx("2.39.2.10", 0, 0, dmxData);
+
+                try {
+                    Thread.sleep(5);
+                } catch (InterruptedException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+            }
+            for (int j = 100; j >= 0; j--) {
+                for (int i = 0; i < dmxData.length; i++) {
+                    dmxData[i] = (byte) j;
+                }
+
+                dmxData[9] = (byte) 0;
+
+                // send data to localhost
+                artnet.unicastDmx("2.39.2.10", 0, 0, dmxData);
+
+                try {
+                    Thread.sleep(5);
+                } catch (InterruptedException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+            }
+        }
 
     }
 }
