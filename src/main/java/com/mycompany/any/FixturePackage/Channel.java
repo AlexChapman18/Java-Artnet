@@ -48,7 +48,7 @@ public class Channel {
      * @param _value the value to set
      */
     public void setValue(int _value) {
-        if (0 <= _value && _value < 256) {
+        if (0 <= _value && _value <= 255) {
             setValue((byte) _value);
         }
     }
@@ -57,7 +57,7 @@ public class Channel {
      * @return the value
      */
     public byte getValue() {
-        return value;
+        return (byte) (value);
     }
 
     public void max() {

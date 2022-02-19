@@ -8,8 +8,7 @@ import ch.bildspur.artnet.ArtNetClient;
 //import java.util.concurrent.LinkedBlockingQueue;
 
 public class Universe {
-    //LinkedBlockingQueue<byte[]> buffer = new LinkedBlockingQueue<byte[]>();
-
+    // LinkedBlockingQueue<byte[]> buffer = new LinkedBlockingQueue<byte[]>();
 
     public final String address;
     public final int subnet;
@@ -21,7 +20,7 @@ public class Universe {
         subnet = _subnet;
         universe = _universe;
         artnet = _artnet;
-        
+
         if (!artnet.isRunning()) {
             System.out.println("Starting Artnet");
             artnet.start();
@@ -39,11 +38,10 @@ public class Universe {
         artnet.unicastDmx(address, subnet, universe, frame);
     }
 
-    public void updateFrame(Fixture[] patchedFixtures){
+    public void updateFrame(Fixture[] patchedFixtures) {
         byte[] tempFrame = new byte[512];
-        Arrays.fill(tempFrame, (byte) 0);
-        for(Fixture _currentFixture : patchedFixtures){
-            for(Channel _currentChannel : _currentFixture.channels){
+        for (Fixture _currentFixture : patchedFixtures) {
+            for (Channel _currentChannel : _currentFixture.channels) {
                 tempFrame[_currentChannel.getAddress()] = _currentChannel.getValue();
             }
         }
