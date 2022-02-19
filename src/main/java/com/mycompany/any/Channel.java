@@ -1,30 +1,30 @@
 package com.mycompany.any;
 
 public class Channel {
-    static final int MIN_ID = 0;
-    static final int MAX_ID = 511;
+    static final int MIN_ADDRESS = 0;
+    static final int MAX_ADDRESS = 511;
     static final int MIN_VAL = 0;
     static final int MAX_VAL = 255;
 
-    private int id;
+    private int address;
     private byte value;
-    public String name;
+    public channelTypes name;
 
-    public Channel(int _id) {
-        id = _id;
+    public Channel(int _address) {
+        address = _address;
     }
 
-    public Channel(int _id, String _name) {
-        id = _id;
+    public Channel(int _address, channelTypes _name) {
+        address = _address;
         name = _name;
     }
 
     /**
-     * @param _id the id to set
+     * @param _address the id to set
      */
-    public void setId(int _id) {
-        if (0 <= _id && _id <= 511) {
-            id = _id;
+    public void setAddress(int _address) {
+        if (0 <= _address && _address <= 511) {
+            address = _address;
         } else {
 
         }
@@ -33,8 +33,8 @@ public class Channel {
     /**
      * @return the id
      */
-    public int getId() {
-        return id;
+    public int getAddress() {
+        return address;
     }
 
     /**
