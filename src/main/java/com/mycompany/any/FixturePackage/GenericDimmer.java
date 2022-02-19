@@ -1,4 +1,4 @@
-package com.mycompany.any;
+package com.mycompany.any.FixturePackage;
 
 public class GenericDimmer extends Fixture {
     final public String name = "Generic Dimmer";

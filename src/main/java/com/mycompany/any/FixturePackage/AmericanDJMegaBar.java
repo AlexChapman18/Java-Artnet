@@ -1,4 +1,7 @@
-package com.mycompany.any;
+package com.mycompany.any.FixturePackage;
+
+import com.mycompany.any.PatchFixtures;
+import com.mycompany.any.Sleep;
 
 public class AmericanDJMegaBar extends Fixture {
     final public String name = "AmericanDJMegaBar";
@@ -14,5 +17,12 @@ public class AmericanDJMegaBar extends Fixture {
         }
         channels[startAddress + 8] = new Channel(28, channelTypes.PPR);
         channels[startAddress + 9] = new Channel(29, channelTypes.STROBE); 
+    }
+
+    public void testFixture(){
+
+        
+
+
     }
 }

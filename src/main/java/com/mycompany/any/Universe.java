@@ -1,7 +1,6 @@
 package com.mycompany.any;
 
 import java.util.Arrays;
-
 import com.mycompany.any.FixturePackage.Channel;
 import com.mycompany.any.FixturePackage.Fixture;
 
