@@ -1,18 +1,14 @@
 package com.mycompany.any;
 
+import com.mycompany.any.FixturePackage.*;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.LinkedList;
 import java.util.Scanner;
 
-import com.mycompany.any.FixturePackage.AmericanDJMegaBar;
-import com.mycompany.any.FixturePackage.Fixture;
-import com.mycompany.any.FixturePackage.GenericDimmer;
-import com.mycompany.any.FixturePackage.GenericRGB;
-import com.mycompany.any.FixturePackage.MartinRush5x5;
-
 public class PatchFixtures {
-    private int maxFixtures;
+    private final int maxFixtures;
     public Fixture[] patchedFixtures;
     
     // Used to initialise empty array
@@ -43,16 +39,16 @@ public class PatchFixtures {
         maxFixtures = readFixtures.size();
         patchedFixtures = new Fixture[maxFixtures];
 
-        for (String _fixture : readFixtures){
+        for (String _fixture : readFixtures) {
             String[] splitFixture = _fixture.split(",");
-            if (splitFixture[0] == "AmericanDJMegaBar")
-                setFixture(new AmericanDJMegaBar(Integer.parseInt(splitFixture[1])));
-            else if (splitFixture[0] == "MartinRush5x5")
-            setFixture(new MartinRush5x5(Integer.parseInt(splitFixture[1])));
-            else if (splitFixture[0] == "GenericDimmer")
-                setFixture(new GenericDimmer(Integer.parseInt(splitFixture[1])));
-            else if (splitFixture[0] == "GenericDimmer")
-                setFixture(new GenericRGB(Integer.parseInt(splitFixture[1])));
+            if (splitFixture[0].equals("AmericanDJMegaBar"))
+                setFixture(new AmericanDJMegaBar(Integer.parseInt(splitFixture[1].trim())));
+            else if (splitFixture[0].equals("MartinRush5x5"))
+                setFixture(new MartinRush5x5(Integer.parseInt(splitFixture[1].trim())));
+            else if (splitFixture[0].equals("GenericDimmer"))
+                setFixture(new GenericDimmer(Integer.parseInt(splitFixture[1].trim())));
+            else if (splitFixture[0].equals("GenericDimmer"))
+                setFixture(new GenericRGB(Integer.parseInt(splitFixture[1].trim())));
         }
                   
     }
