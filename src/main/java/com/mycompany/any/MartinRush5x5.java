@@ -18,5 +18,4 @@ public class MartinRush5x5 extends Fixture {
         channels[27] = new Channel(28, channelTypes.DIMMER);
         channels[28] = new Channel(29, channelTypes.STROBE);        
     }
-
 }

@@ -15,8 +15,4 @@ public class AmericanDJMegaBar extends Fixture {
         channels[9] = new Channel(28, channelTypes.PPR);
         channels[10] = new Channel(29, channelTypes.STROBE); 
     }
-
-    // How many channels we are using and 
-    protected Channel[] channels;
-
 }
