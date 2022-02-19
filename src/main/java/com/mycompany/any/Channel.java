@@ -23,10 +23,8 @@ public class Channel {
      * @param _address the id to set
      */
     public void setAddress(int _address) {
-        if (0 <= _address && _address <= 511) {
+        if (MIN_ADDRESS <= _address && _address <= MAX_ADDRESS) {
             address = _address;
-        } else {
-
         }
     }
 
@@ -48,7 +46,7 @@ public class Channel {
      * @param _value the value to set
      */
     public void setValue(int _value) {
-        if (0 <= _value && _value < 256) {
+        if (MIN_VAL <= _value && _value < MAX_VAL) {
             setValue((byte) _value);
         }
     }
