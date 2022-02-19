@@ -17,6 +17,11 @@ public class Universe {
         subnet = _subnet;
         universe = _universe;
         artnet = _artnet;
+        
+        if (!artnet.isRunning()) {
+            System.out.println("Starting Artnet");
+            artnet.start();
+        }
 
         byte[] currentFrame = new byte[512];
         for (int channel = 0; channel < currentFrame.length; channel++) {
