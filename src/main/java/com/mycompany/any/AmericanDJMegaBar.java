@@ -8,11 +8,11 @@ public class AmericanDJMegaBar extends Fixture {
     public AmericanDJMegaBar(int _startAddress){
         startAddress = _startAddress;
         for (int i = 0; i < 9; i+=3){
-            channels[i] = new Channel(i+1, channelTypes.RED);
-            channels[i+1] = new Channel(i+2, channelTypes.GREEN);
-            channels[i+2] = new Channel(i+3, channelTypes.BLUE);
+            channels[i] = new Channel(startAddress + i, channelTypes.RED);
+            channels[i+1] = new Channel(startAddress + i + 1, channelTypes.GREEN);
+            channels[i+2] = new Channel(startAddress + i + 2, channelTypes.BLUE);
         }
-        channels[9] = new Channel(28, channelTypes.PPR);
-        channels[10] = new Channel(29, channelTypes.STROBE); 
+        channels[startAddress + 8] = new Channel(28, channelTypes.PPR);
+        channels[startAddress + 9] = new Channel(29, channelTypes.STROBE); 
     }
 }

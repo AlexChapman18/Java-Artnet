@@ -10,12 +10,12 @@ public class MartinRush5x5 extends Fixture {
         startAddress = _startAddress;
         channels = new Channel[width];
         for (int i = 0; i < 25; i++){
-            channels[i] = new Channel(i+1, channelTypes.DIMMER);
+            channels[i] = new Channel(startAddress + i, channelTypes.DIMMER);
         }
         for (int i = 25; i < 27; i++){
-            channels[i] = new Channel(i+1, channelTypes.PPR);
+            channels[i] = new Channel(startAddress + i, channelTypes.PPR);
         }
-        channels[27] = new Channel(28, channelTypes.DIMMER);
-        channels[28] = new Channel(29, channelTypes.STROBE);        
+        channels[27] = new Channel(startAddress + 27, channelTypes.DIMMER);
+        channels[28] = new Channel(startAddress + 28, channelTypes.STROBE);        
     }
 }

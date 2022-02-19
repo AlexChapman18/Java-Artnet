@@ -7,6 +7,6 @@ public class GenericDimmer extends Fixture {
 
     public GenericDimmer(int _startAddress){
         startAddress = _startAddress;
-        channels[0] = new Channel(1, channelTypes.DIMMER); 
+        channels[0] = new Channel(startAddress, channelTypes.DIMMER); 
     }
 }

@@ -1,5 +1,7 @@
 package com.mycompany.any;
 
+import java.util.Arrays;
+
 import ch.bildspur.artnet.ArtNetClient;
 //import java.util.concurrent.LinkedBlockingQueue;
 
@@ -34,5 +36,17 @@ public class Universe {
     public void sendFrame(byte[] frame) {
         artnet.unicastDmx(address, subnet, universe, frame);
     }
+
+    public void updateFrame(Fixture[] patchedFixtures){
+        byte[] tempFrame = new byte[512];
+        Arrays.fill(tempFrame, (byte) 0);
+        for(Fixture _currentFixture : patchedFixtures){
+            for(Channel _currentChannel : _currentFixture.channels){
+                tempFrame[_currentChannel.getAddress()] = _currentChannel.getValue();
+            }
+        }
+        sendFrame(tempFrame);
+    }
+
 
 }

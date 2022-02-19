@@ -7,9 +7,9 @@ public class GenericRGB extends Fixture {
 
     public GenericRGB(int _startAddress){
         startAddress = _startAddress;
-        channels[0] = new Channel(1, channelTypes.RED);
-        channels[1] = new Channel(2, channelTypes.GREEN);
-        channels[2] = new Channel(3, channelTypes.BLUE);
+        channels[0] = new Channel(startAddress, channelTypes.RED);
+        channels[1] = new Channel(startAddress + 1, channelTypes.GREEN);
+        channels[2] = new Channel(startAddress + 2, channelTypes.BLUE);
     }
 
 }
