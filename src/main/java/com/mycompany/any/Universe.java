@@ -2,6 +2,9 @@ package com.mycompany.any;
 
 import java.util.Arrays;
 
+import com.mycompany.any.FixturePackage.Channel;
+import com.mycompany.any.FixturePackage.Fixture;
+
 import ch.bildspur.artnet.ArtNetClient;
 //import java.util.concurrent.LinkedBlockingQueue;
 
@@ -47,6 +50,4 @@ public class Universe {
         }
         sendFrame(tempFrame);
     }
-
-
 }

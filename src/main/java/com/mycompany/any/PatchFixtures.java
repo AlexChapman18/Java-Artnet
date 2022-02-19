@@ -1,5 +1,7 @@
 package com.mycompany.any;
 
+import com.mycompany.any.FixturePackage.Fixture;
+
 public class PatchFixtures {
     private int maxFixtures;
     public Fixture[] patchedFixtures;
