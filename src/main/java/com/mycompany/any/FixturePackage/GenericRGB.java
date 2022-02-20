@@ -1,7 +1,7 @@
 package com.mycompany.any.FixturePackage;
 
 public class GenericRGB extends Fixture {
-    final public String name = "Generic RGB";
+    final public static String name = "Generic RGB";
     final public int width = 3;
     public int startAddress;
 

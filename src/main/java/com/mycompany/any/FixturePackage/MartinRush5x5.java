@@ -1,7 +1,7 @@
 package com.mycompany.any.FixturePackage;
 
 public class MartinRush5x5 extends Fixture {
-    final public String name = "MartinRush5x5";
+    final public static String name = "MartinRush5x5";
     final public int width = 29;
     public int startAddress;
 

@@ -1,2 +1,1 @@
-AmericanDJMegaBar, 20
-AmericanDJMegaBar, 1
+AmericanDJMegaBar, 0

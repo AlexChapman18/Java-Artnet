@@ -9,12 +9,12 @@ import java.util.Scanner;
 
 public class PatchFixtures {
     private final int maxFixtures;
-    public Fixture[] patchedFixtures;
+    public Fixture[] Fixtures;
     
     // Used to initialise empty array
     public PatchFixtures(int _maxFixtures){
         maxFixtures = _maxFixtures;
-        patchedFixtures = new Fixture[maxFixtures];
+        Fixtures = new Fixture[maxFixtures];
     }
 
 
@@ -37,7 +37,7 @@ public class PatchFixtures {
         }
 
         maxFixtures = readFixtures.size();
-        patchedFixtures = new Fixture[maxFixtures];
+        Fixtures = new Fixture[maxFixtures];
 
         for (String _fixture : readFixtures) {
             String[] splitFixture = _fixture.split(",");
@@ -55,15 +55,15 @@ public class PatchFixtures {
     
     public void setFixture(Fixture _newFixture){
         boolean patched = false;
-        for(int i = 0; i<patchedFixtures.length && !patched; i++) {
-            if(patchedFixtures[i] == null){
-                patchedFixtures[i] = _newFixture;
+        for(int i = 0; i<Fixtures.length && !patched; i++) {
+            if(Fixtures[i] == null){
+                Fixtures[i] = _newFixture;
                 patched = true;
             }
         }
     }
 
     public Fixture getFixture(int index){
-        return patchedFixtures[index];
+        return Fixtures[index];
     }
 }

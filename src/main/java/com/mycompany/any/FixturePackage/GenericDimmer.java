@@ -1,7 +1,7 @@
 package com.mycompany.any.FixturePackage;
 
 public class GenericDimmer extends Fixture {
-    final public String name = "Generic Dimmer";
+    final public static String name = "Generic Dimmer";
     final public int width = 1;
     public int startAddress;
 
