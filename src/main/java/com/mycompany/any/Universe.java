@@ -14,10 +14,10 @@ public class Universe {
 
     /**
      * Initialises the universe
-     * @param _artnet
-     * @param _address
-     * @param _subnet
-     * @param _universe
+     * @param _artnet The artnet client
+     * @param _address The address the artnet node
+     * @param _subnet The subnet of the artnet node
+     * @param _universe the output universe on the node
      */
     public Universe(ArtNetClient _artnet, String _address, int _subnet, int _universe) {
         address = _address;
@@ -32,8 +32,24 @@ public class Universe {
 
         Arrays.fill(frameValues, (byte) 0);
         pushFrame();
-    } 
+    }
 
+
+    /**
+     * returns the current frame of the Universe
+     * @return current Frame
+     */
+    public byte[] getFrame(){
+        return frameValues;
+    }
+
+    /**
+     * Sets the frame
+     * @param _frame 512 Byte array of all DMX channel values
+     */
+    public void setFrame(byte[] _frame){
+        this.frameValues = _frame;
+    }
 
     /**
      * Commits all frames at value 255, does not push
@@ -44,7 +60,7 @@ public class Universe {
 
     /**
      * commits all frames at value 255, will push depending on parameter
-     * @param doPush
+     * @param doPush Boolean value to determine if commit will be pushed
      */
     public void commit255Frame(boolean doPush){
         Arrays.fill(frameValues, (byte) 255);
@@ -61,7 +77,7 @@ public class Universe {
 
     /**
      * commits all frames at value 0, will push depending on parameter
-     * @param doPush
+     * @param doPush Boolean value to determine if commit will be pushed
      */
     public void commit0Frame(boolean doPush){
         Arrays.fill(frameValues, (byte) 0);
@@ -72,7 +88,7 @@ public class Universe {
 
     /**
      * commits all fixtures, does not push
-     * @param _fixtures
+     * @param _fixtures Array of every patched fixture
      */
     public void commitAllFixtures(Fixture[] _fixtures){
         commitAllFixtures(_fixtures, false);
@@ -80,8 +96,8 @@ public class Universe {
 
     /**
      * commits all fixtures, will push depending on parameter
-     * @param _fixtures
-     * @param _doPush
+     * @param _fixtures Array of every patched fixture
+     * @param _doPush Boolean value to determine if commit will be pushed
      */
     public void commitAllFixtures(Fixture[] _fixtures, boolean _doPush){
         for (Fixture _fixture : _fixtures){
@@ -93,7 +109,7 @@ public class Universe {
 
     /**
      * commits fixture, will not push
-     * @param _fixture
+     * @param _fixture The fixture object you want to push
      */
     public void commitFixture(Fixture _fixture){
         commitFixture(_fixture, false);
@@ -101,8 +117,8 @@ public class Universe {
     
     /**
      * commits fixture, will push depending on parameter
-     * @param _fixture
-     * @param _doPush
+     * @param _fixture The fixture object you want to push
+     * @param _doPush Boolean value to determine if commit will be pushed
      */
     public void commitFixture(Fixture _fixture, boolean _doPush){
         for (Channel _channel : _fixture.channels){
@@ -112,9 +128,8 @@ public class Universe {
             pushFrame();
     }
 
-
     /**
-     * Outputs frameValues to artnet node
+     * Pushes frameValues to artnet node
      */
     public void pushFrame(){
         artnet.unicastDmx(address, subnet, universe, frameValues);

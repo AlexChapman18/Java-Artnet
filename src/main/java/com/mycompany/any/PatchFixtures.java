@@ -17,6 +17,20 @@ public class PatchFixtures {
         Fixtures = new Fixture[maxFixtures];
     }
 
+    public void setFixture(Fixture _newFixture){
+        boolean patched = false;
+        for(int i = 0; i<Fixtures.length && !patched; i++) {
+            if(Fixtures[i] == null){
+                Fixtures[i] = _newFixture;
+                patched = true;
+            }
+        }
+    }
+
+    public Fixture getFixture(int index){
+        return Fixtures[index];
+    }
+
 
     // Used to patch from a file
     public PatchFixtures(String _fileName){
@@ -50,20 +64,5 @@ public class PatchFixtures {
             else if (splitFixture[0].equals("GenericDimmer"))
                 setFixture(new GenericRGB(Integer.parseInt(splitFixture[1].trim())));
         }
-                  
-    }
-    
-    public void setFixture(Fixture _newFixture){
-        boolean patched = false;
-        for(int i = 0; i<Fixtures.length && !patched; i++) {
-            if(Fixtures[i] == null){
-                Fixtures[i] = _newFixture;
-                patched = true;
-            }
-        }
-    }
-
-    public Fixture getFixture(int index){
-        return Fixtures[index];
     }
 }

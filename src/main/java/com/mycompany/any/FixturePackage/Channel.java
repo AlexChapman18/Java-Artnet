@@ -1,24 +1,31 @@
 package com.mycompany.any.FixturePackage;
 
 public class Channel {
+    //  Constants
     static final int MIN_ADDRESS = 0;
     static final int MAX_ADDRESS = 511;
     static final int MIN_VAL = 0;
     static final int MAX_VAL = 255;
 
+    //  Variables
     private int address;
     private byte value;
     public channelTypes name;
 
-    public Channel(int _address) {
-        address = _address;
-    }
-
+    // Constructor(s)
+    /**
+     * Channel constructor with starting address and name
+     * @param _address the starting address
+     * @param _name the channel name enum
+     */
     public Channel(int _address, channelTypes _name) {
-        address = _address;
-        name = _name;
+        this.setAddress(_address);
+        this.setName(_name);
     }
 
+
+    // ---Set and get methods---
+    // Address
     /**
      * @param _address the id to set
      */
@@ -26,7 +33,7 @@ public class Channel {
         if (0 <= _address && _address <= 511) {
             address = _address;
         } else {
-
+            System.out.println("Error converting" + _address + "to Byte");
         }
     }
 
@@ -34,9 +41,11 @@ public class Channel {
      * @return the id
      */
     public int getAddress() {
-        return address;
+        return this.address;
     }
 
+
+    // Value
     /**
      * @param _value the value to set
      */
@@ -57,9 +66,29 @@ public class Channel {
      * @return the value
      */
     public byte getValue() {
-        return (byte) (value);
+        return (byte) this.value;
     }
 
+
+    // Name
+    /**
+     * Set the channel name
+     * @param _name Channel name enum
+     */
+    public void setName(channelTypes _name){
+        this.name = _name;
+    }
+
+    /**
+     * Get the channel name
+     * @return channel name enum
+     */
+    public channelTypes getName(){
+        return this.name;
+    }
+
+
+    // methods to max and min value
     public void max() {
         value = (byte) MAX_VAL;
     }
