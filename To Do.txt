@@ -1,0 +1,12 @@
+1) Refactor the File structure (It looks pretty horrid)
+
+2) Design a new way of doing fixtures (It's a bit ass ATM
+    Maybe a superclass called Channel, with subclasses of channel types (i.e. Intensity, Colour, Gobo, ...)
+    And a fixture is a collection of Channel types??(It makes sense logically))
+
+3) Make tests
+
+
+
+
+
