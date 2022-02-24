@@ -66,7 +66,7 @@ public class Channel {
      * @return the value
      */
     public byte getValue() {
-        return (byte) this.value;
+        return this.value;
     }
 
 

@@ -9,16 +9,16 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 class UniverseTest {
 
-    Universe _universeOne = new Universe(new ArtNetClient(), "2.39.2.10", 0, 0);;
+    Universe _universeOne = new Universe(new ArtNetClient(), "2.39.2.10", 0, 0);
     byte[] testFrame = new byte[512];
 
     @BeforeAll
     public void setup(){
-        _universeOne.commit0Frame();
+        this._universeOne.commit0Frame();
     }
 
     @Test
