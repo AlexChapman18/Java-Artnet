@@ -1,6 +1,9 @@
 package com.mycompany.any;
 
 import ch.bildspur.artnet.ArtNetClient;
+import com.mycompany.any.FixturePackage.AmericanDJMegaBar;
+import com.mycompany.any.FixturePackage.Fixture;
+import com.mycompany.any.FixturePackage.GenericDimmer;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -10,13 +13,12 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class UniverseTest {
 
-    Universe _universeOne;
+    Universe _universeOne = new Universe(new ArtNetClient(), "2.39.2.10", 0, 0);;
     byte[] testFrame = new byte[512];
 
     @BeforeAll
     public void setup(){
-        ArtNetClient artnet = new ArtNetClient();
-        Universe _universeOne = new Universe(artnet, "2.39.2.10", 0, 0);
+        _universeOne.commit0Frame();
     }
 
     @Test
@@ -35,6 +37,18 @@ class UniverseTest {
 
     @Test
     void commitAllFixtures() {
+        Fixture[] Fixtures = {
+                new AmericanDJMegaBar(1),
+                new AmericanDJMegaBar(12),
+                new GenericDimmer(13)
+        };
+
+        Fixtures[0].setValues(new int[]{255, 255, 255, 255, 255});
+        Fixtures[0].setValues(new int[]{255, 255, 255, 255, 255});
+
+
+
+
     }
 
     @Test

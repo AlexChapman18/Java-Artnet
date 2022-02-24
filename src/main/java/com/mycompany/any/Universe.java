@@ -1,9 +1,9 @@
 package com.mycompany.any;
 
-import java.util.Arrays;
 import com.mycompany.any.FixturePackage.Channel;
 import com.mycompany.any.FixturePackage.Fixture;
 import ch.bildspur.artnet.ArtNetClient;
+import java.util.Arrays;
 
 public class Universe {
     public final String address;
@@ -84,7 +84,6 @@ public class Universe {
         if (doPush)
             pushFrame();
     }
-
 
     /**
      * commits all fixtures, does not push

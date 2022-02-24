@@ -16,6 +16,8 @@ public class Fixture {
         this.channels = _channels;
     }
 
+    public void setValues(int[] _values){};
+
     public void setStartAddress(int _startAddress){
         this.startAddress = _startAddress;
     }

@@ -88,12 +88,17 @@ public class Channel {
     }
 
 
-    // methods to max and min value
-    public void max() {
-        value = (byte) MAX_VAL;
+    /**
+     * set value to maximum
+     */
+    public void setMax() {
+       setValue((byte) MAX_VAL);
     }
 
-    public void min() {
-        value = (byte) MIN_VAL;
+    /**
+     * set value to minimum
+     */
+    public void setMin() {
+        setValue((byte) MIN_VAL);
     }
 }

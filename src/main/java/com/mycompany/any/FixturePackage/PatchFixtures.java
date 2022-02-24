@@ -1,6 +1,4 @@
-package com.mycompany.any;
-
-import com.mycompany.any.FixturePackage.*;
+package com.mycompany.any.FixturePackage;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -31,7 +29,6 @@ public class PatchFixtures {
         return Fixtures[index];
     }
 
-
     // Used to patch from a file
     public PatchFixtures(String _fileName){
         LinkedList<String> readFixtures = new LinkedList<String>();
@@ -55,14 +52,16 @@ public class PatchFixtures {
 
         for (String _fixture : readFixtures) {
             String[] splitFixture = _fixture.split(",");
-            if (splitFixture[0].equals("AmericanDJMegaBar"))
-                setFixture(new AmericanDJMegaBar(Integer.parseInt(splitFixture[1].trim())));
-            else if (splitFixture[0].equals("MartinRush5x5"))
-                setFixture(new MartinRush5x5(Integer.parseInt(splitFixture[1].trim())));
-            else if (splitFixture[0].equals("GenericDimmer"))
-                setFixture(new GenericDimmer(Integer.parseInt(splitFixture[1].trim())));
-            else if (splitFixture[0].equals("GenericDimmer"))
-                setFixture(new GenericRGB(Integer.parseInt(splitFixture[1].trim())));
+            switch (splitFixture[0]) {
+                case ("AmericanDJMegaBar"):
+                    setFixture(new AmericanDJMegaBar(Integer.parseInt(splitFixture[1].trim())));
+                case ("MartinRush5x5"):
+                    setFixture(new MartinRush5x5(Integer.parseInt(splitFixture[1].trim())));
+                case ("GenericDimmer"):
+                    setFixture(new GenericDimmer(Integer.parseInt(splitFixture[1].trim())));
+                case ("GenericRGB"):
+                    setFixture(new GenericRGB(Integer.parseInt(splitFixture[1].trim())));
+            }
         }
     }
 }
