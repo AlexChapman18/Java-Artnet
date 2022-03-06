@@ -1,4 +1,4 @@
-package com.mycompany.any.FixturePackage;
+package com.mycompany.any.Fixture;
 
 public class MartinRush5x5 extends Fixture {
     final public static String name = "MartinRush5x5";

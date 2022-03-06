@@ -1,9 +1,9 @@
 package com.mycompany.any;
 
 import ch.bildspur.artnet.ArtNetClient;
-import com.mycompany.any.FixturePackage.AmericanDJMegaBar;
-import com.mycompany.any.FixturePackage.Fixture;
-import com.mycompany.any.FixturePackage.GenericDimmer;
+import com.mycompany.any.Fixture.AmericanDJMegaBar;
+import com.mycompany.any.Fixture.Fixture;
+import com.mycompany.any.Fixture.GenericDimmer;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -17,8 +17,8 @@ class UniverseTest {
     byte[] testFrame = new byte[512];
 
     @BeforeAll
-    public void setup(){
-        _universeOne.commit0Frame();
+    void setup(){
+        this._universeOne.commit0Frame();
     }
 
     @Test

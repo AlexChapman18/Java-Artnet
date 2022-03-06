@@ -1,4 +1,4 @@
-package com.mycompany.any.FixturePackage;
+package com.mycompany.any.Fixture;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -31,7 +31,7 @@ public class PatchFixtures {
 
     // Used to patch from a file
     public PatchFixtures(String _fileName){
-        LinkedList<String> readFixtures = new LinkedList<String>();
+        LinkedList<String> readFixtures = new LinkedList<>();
         try {
             File myObj = new File(_fileName);
             Scanner myReader = new Scanner(myObj);

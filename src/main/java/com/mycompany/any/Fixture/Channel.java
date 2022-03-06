@@ -1,4 +1,4 @@
-package com.mycompany.any.FixturePackage;
+package com.mycompany.any.Fixture;
 
 public class Channel {
     //  Constants

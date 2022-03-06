@@ -1,4 +1,4 @@
-package com.mycompany.any.FixturePackage;
+package com.mycompany.any.Fixture;
 
 import com.mycompany.any.Sleep;
 import com.mycompany.any.Universe;

@@ -1,7 +1,7 @@
 package com.mycompany.any;
 
-import com.mycompany.any.FixturePackage.Channel;
-import com.mycompany.any.FixturePackage.Fixture;
+import com.mycompany.any.Fixture.Channel;
+import com.mycompany.any.Fixture.Fixture;
 import ch.bildspur.artnet.ArtNetClient;
 import java.util.Arrays;
 
@@ -35,6 +35,20 @@ public class Universe {
     }
 
 
+    // -- BROKEN
+//    public byte limitByte(int Value){
+//        return limitByte((byte)Value);
+//    }
+//
+//    public byte limitByte(byte Value){
+//        if (Value > (byte) 250 || Value < (byte) 0){
+//            return (byte)0;
+//        }
+//        return Value;
+//    }
+    // BROKEN ---
+
+
     /**
      * returns the current frame of the Universe
      * @return current Frame
@@ -51,6 +65,7 @@ public class Universe {
         this.frameValues = _frame;
     }
 
+    
     /**
      * Commits all frames at value 255, does not push
      */
@@ -68,6 +83,7 @@ public class Universe {
             pushFrame();
     }
 
+
     /**
      * commits all frames at value 0, does not push
      */
@@ -84,6 +100,70 @@ public class Universe {
         if (doPush)
             pushFrame();
     }
+
+
+    /**
+     * Sets a value at a specific index in universe
+     * @param Value Array of values 0-255
+     * @param index Index in universe
+     */
+    public void commitIndexFrame(int Value, int index){
+        commitIndexFrame(Value, index, true);
+    }
+
+    /**
+     * Sets a value at a specific index in universe
+     * @param Value Array of values 0-255
+     * @param index Index in universe
+     */
+    public void commitIndexFrame(int Value, int index, boolean doPush){
+        this.frameValues[index] = (byte)Value;
+        if (doPush)
+            pushFrame();
+    }
+
+
+    /**
+     * Sets a group of values at a specific index in universe
+     * @param Values Array of values 0-255
+     * @param index Index in universe
+     */
+    public void commitGroupIndexFrame(int[] Values, int index){
+        commitGroupIndexFrame(Values, index, true);
+    }
+
+    /**
+     * Sets a group of values at a specific index in universe
+     * @param Values Array of values 0-255
+     * @param index Index in universe
+     */
+    public void commitGroupIndexFrame(int[] Values, int index, boolean doPush){
+        for (int i = 0; i < Values.length; i++){
+            this.frameValues[i + index] = (byte) Values[i];
+        }
+        if (doPush)
+            pushFrame();
+    }
+
+
+    /**
+     * Sets single value to entire universe
+     * @param Value Value 0-255
+     */
+    public void commitXFrame(int Value){
+        commitXFrame(Value, true);
+    }
+
+    /**
+     * Sets single value to entire universe
+     * @param Value Value 0-255
+     */
+    public void commitXFrame(int Value, boolean doPush){
+        Arrays.fill(frameValues, (byte) Value);
+        if (doPush)
+            pushFrame();
+    }
+
 
     /**
      * commits all fixtures, does not push
@@ -106,6 +186,7 @@ public class Universe {
             pushFrame();
     }
 
+
     /**
      * commits fixture, will not push
      * @param _fixture The fixture object you want to push
@@ -127,10 +208,12 @@ public class Universe {
             pushFrame();
     }
 
+
     /**
      * Pushes frameValues to artnet node
      */
     public void pushFrame(){
         artnet.unicastDmx(address, subnet, universe, frameValues);
     }
+
 }

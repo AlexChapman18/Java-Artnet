@@ -1,4 +1,4 @@
-package com.mycompany.any.FixturePackage;
+package com.mycompany.any.Fixture;
 
 public class GenericRGB extends Fixture {
     final public static String name = "Generic RGB";

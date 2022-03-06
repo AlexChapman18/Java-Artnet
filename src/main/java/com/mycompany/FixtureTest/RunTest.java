@@ -1,7 +1,6 @@
 package com.mycompany.FixtureTest;
 
-import com.mycompany.any.PatchFixtures;
-import com.mycompany.any.FixturePackage.*;
+import com.mycompany.any.Fixture.*;
 import ch.bildspur.artnet.ArtNetClient;
 import com .mycompany.any.Universe;
 
