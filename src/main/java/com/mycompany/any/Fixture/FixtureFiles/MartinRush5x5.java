@@ -1,4 +1,8 @@
-package com.mycompany.any.Fixture;
+package com.mycompany.any.Fixture.FixtureFiles;
+
+import com.mycompany.any.Fixture.Fixture;
+import com.mycompany.any.Fixture.Channel;
+import com.mycompany.any.Fixture.channelTypes;
 
 public class MartinRush5x5 extends Fixture {
     final public static String name = "MartinRush5x5";

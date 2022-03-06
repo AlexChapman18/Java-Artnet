@@ -1,9 +1,8 @@
 package com.mycompany.any;
 
 import ch.bildspur.artnet.ArtNetClient;
-import com.mycompany.any.Fixture.AmericanDJMegaBar;
+import com.mycompany.any.Fixture.FixtureFiles.*;
 import com.mycompany.any.Fixture.Fixture;
-import com.mycompany.any.Fixture.GenericDimmer;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 

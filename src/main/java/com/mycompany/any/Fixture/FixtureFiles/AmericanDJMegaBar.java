@@ -1,7 +1,8 @@
-package com.mycompany.any.Fixture;
+package com.mycompany.any.Fixture.FixtureFiles;
 
-import com.mycompany.any.Sleep;
-import com.mycompany.any.Universe;
+import com.mycompany.any.Fixture.Fixture;
+import com.mycompany.any.Fixture.Channel;
+import com.mycompany.any.Fixture.channelTypes;
 
 public class AmericanDJMegaBar extends Fixture {
     final public static String name = "AmericanDJMegaBar";
@@ -57,23 +58,22 @@ public class AmericanDJMegaBar extends Fixture {
         channels[10].setValue(_dimmerValue);
     }
 
-    @Override
-    public void testFixture(Universe _universe) {
-
-        // Sets all the red channels to 255
-        this.channels[0].setValue(255);
-        this.channels[10].setValue(255);
-        _universe.commitFixture(this, true);
-        new Sleep(2000);
-        this.setValues(new int[]{255, 0, 0, 0, 255});
-        _universe.commitFixture(this, true);
-        new Sleep(2000);
-        this.setValues(new int[]{255, 255, 0, 100, 255});
-        _universe.commitFixture(this, true);
-        new Sleep(2000);
-        _universe.commit0Frame();
-        this.setValues(new int[]{0, 0, 0, 0, 0});
-        _universe.commitFixture(this, true);
-
-    }        
+//    @Override
+//    public void testFixture(Universe _universe) {
+//
+//        // Sets all the red channels to 255
+//        this.channels[0].setValue(255);
+//        this.channels[10].setValue(255);
+//        _universe.commitFixture(this, true);
+//        new Sleep(2000);
+//        this.setValues(new int[]{255, 0, 0, 0, 255});
+//        _universe.commitFixture(this, true);
+//        new Sleep(2000);
+//        this.setValues(new int[]{255, 255, 0, 100, 255});
+//        _universe.commitFixture(this, true);
+//        new Sleep(2000);
+//        _universe.commit0Frame();
+//        this.setValues(new int[]{0, 0, 0, 0, 0});
+//        _universe.commitFixture(this, true);
+//    }
 }
