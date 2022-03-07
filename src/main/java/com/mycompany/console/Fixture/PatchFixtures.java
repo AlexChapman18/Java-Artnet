@@ -1,6 +1,6 @@
-package com.mycompany.any.Fixture;
+package com.mycompany.console.Fixture;
 
-import com.mycompany.any.Fixture.FixtureFiles.*;
+import com.mycompany.console.Fixture.FixtureFiles.*;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.LinkedList;

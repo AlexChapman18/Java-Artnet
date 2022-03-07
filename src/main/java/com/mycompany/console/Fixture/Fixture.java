@@ -1,8 +1,8 @@
-package com.mycompany.any.Fixture;
+package com.mycompany.console.Fixture;
 
-import com.mycompany.any.Universe;
+import com.mycompany.console.Universe;
 
-public class Fixture {
+public abstract class Fixture {
     public String name;
     public Channel[] channels;
     public int startAddress;

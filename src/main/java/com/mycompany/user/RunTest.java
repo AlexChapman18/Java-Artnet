@@ -1,8 +1,8 @@
-package com.mycompany.FixtureTest;
+package com.mycompany.user;
 
-import com.mycompany.any.Fixture.*;
+import com.mycompany.console.Fixture.*;
 import ch.bildspur.artnet.ArtNetClient;
-import com .mycompany.any.Universe;
+import com .mycompany.console.Universe;
 
 public class RunTest {
     public static void main(String[] args) {

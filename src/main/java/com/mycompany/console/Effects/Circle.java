@@ -1,4 +1,4 @@
-package com.mycompany.any.Effects;
+package com.mycompany.console.Effects;
 
 public class Circle extends Effect{
 

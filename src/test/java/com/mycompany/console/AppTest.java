@@ -1,4 +1,4 @@
-package com.mycompany.any;
+package com.mycompany.console;
 
 import static org.junit.Assert.assertTrue;
 

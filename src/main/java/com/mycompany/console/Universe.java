@@ -1,11 +1,11 @@
-package com.mycompany.any;
+package com.mycompany.console;
 
-import com.mycompany.any.Fixture.Channel;
-import com.mycompany.any.Fixture.Fixture;
+import com.mycompany.console.Fixture.Channel;
+import com.mycompany.console.Fixture.Fixture;
 import ch.bildspur.artnet.ArtNetClient;
 import java.util.Arrays;
 
-public class Universe {
+public class Universe extends Thread {
     public final String address;
     public final int subnet;
     public final int universe;
@@ -34,6 +34,16 @@ public class Universe {
         pushFrame();
     }
 
+//    Thread code
+    public void run(){
+        while(true){
+            pushFrame();
+            System.out.println("DMX Value: " + (int)(getFrame()[0] & 0xFF) + " " + (int)(getFrame()[1] & 0xFF) + " " + (int)(getFrame()[2] & 0xFF) + " " + (int)(getFrame()[3] & 0xFF) + " " + (int)(getFrame()[4] & 0xFF));
+            try {
+                Thread.sleep(22);
+            } catch (InterruptedException e) {}
+        }
+    }
 
     // -- BROKEN
 //    public byte limitByte(int Value){
@@ -47,7 +57,6 @@ public class Universe {
 //        return Value;
 //    }
     // BROKEN ---
-
 
     /**
      * returns the current frame of the Universe

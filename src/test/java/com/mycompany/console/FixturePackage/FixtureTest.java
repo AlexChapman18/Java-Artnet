@@ -1,14 +1,12 @@
-package com.mycompany.any.Fixture;
+package com.mycompany.console.Fixture;
 
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class FixtureTest {
 
     @Test
     void setName() {
-        new Fixture();
+//        new Fixture();
     }
 
     @Test

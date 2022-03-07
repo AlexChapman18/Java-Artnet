@@ -1,4 +1,4 @@
-package com.mycompany.any;
+package com.mycompany.console;
 
 public class Sleep {
     public Sleep(int millie){
